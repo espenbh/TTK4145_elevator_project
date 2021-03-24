@@ -55,13 +55,13 @@ pub fn fsm_onRequestButtonPress(btn_floor: int, btn_type: Button){
 
     setAllLights(elevator);
 
-    printf("\nNew state:\n");
+    println!("\nNew state:\n");
     elevator_print(elevator);
 }
 
 
 pub fn fsm_onFloorArrival(newFloor: int){
-    printf("\n\nfsm_onFloorArrival(%d)\n", newFloor);
+    println!("\n\nfsm_onFloorArrival(%d)\n", newFloor);
     elevator_print(elevator);
 
     elevator.floor = newFloor;
@@ -85,14 +85,14 @@ pub fn fsm_onFloorArrival(newFloor: int){
 }
 
 
-
+   
 
 void fsm_onDoorTimeout(void){
-    printf("\n\n%s()\n", __FUNCTION__);
+    println!("\n\nfsm_onDoorTimeout()\n");
     elevator_print(elevator);
 
-    switch(elevator.behaviour){
-    case EB_DoorOpen:
+    match elevator.behaviour{
+    EB_DoorOpen => {
         elevator.dirn = requests_chooseDirection(elevator);
 
         outputDevice.doorLight(0);
@@ -103,8 +103,7 @@ void fsm_onDoorTimeout(void){
         } else {
             elevator.behaviour = EB_Moving;
         }
-
-        break;
+    }
     default:
         break;
     }

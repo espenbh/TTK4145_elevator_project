@@ -1,6 +1,6 @@
 use elevator_driver::elevio;
 use elevator_driver::elevio::elev as e;
-
+mod 
 
 pub fn setAllLights(es: e::Elevator){
     for floor in 0..e::N_FLOORS {
@@ -85,9 +85,9 @@ pub fn fsm_onFloorArrival(newFloor: int){
 }
 
 
-   
+    
 
-void fsm_onDoorTimeout(void){
+pub fn fsm_onDoorTimeout(){
     println!("\n\nfsm_onDoorTimeout()\n");
     elevator_print(elevator);
 

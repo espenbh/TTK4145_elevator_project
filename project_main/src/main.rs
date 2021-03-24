@@ -5,7 +5,8 @@ use crossbeam_channel as cbc;
 
 use elevator_driver::elevio;
 use elevator_driver::elevio::elev as e;
-mod single_elevator_controller;
+mod mod_single_elevator_controller;
+
 
 fn main() -> std::io::Result<()> {
     let elev_num_floors = 4;

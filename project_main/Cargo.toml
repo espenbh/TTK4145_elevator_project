@@ -10,10 +10,9 @@ edition = "2018"
 crossbeam-channel = "0.5"
 
 [lib]
-name = "elevator_driver"
-path = "elevator_driver/src/lib.rs"
+name = "lib_elevator_driver"
+path = "lib_elevator_driver/src/lib.rs"
 
 [[bin]]
 name = "main"
 path = "src/main.rs"
-
